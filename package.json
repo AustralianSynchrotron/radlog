@@ -10,8 +10,7 @@
   "author": "Robbie Clarken",
   "license": "MIT",
   "dependencies": {
-    "leveldown": "~0.8.3",
-    "levelup": "~0.16.0",
+    "mongoose": "~3.6.20",
     "jade": "~0.35.0",
     "forever": "~0.10.8",
     "routes": "~0.2.0",
