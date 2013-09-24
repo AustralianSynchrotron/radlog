@@ -4,6 +4,7 @@
   "description": "Website for tracking radiation sources.",
   "main": "index.js",
   "scripts": {
+    "start": "node_modules/forever/bin/forever -w index.js",
     "test": "node_modules/mocha/bin/mocha"
   },
   "author": "Robbie Clarken",
@@ -11,7 +12,10 @@
   "dependencies": {
     "leveldown": "~0.8.3",
     "levelup": "~0.16.0",
-    "jade": "~0.35.0"
+    "jade": "~0.35.0",
+    "forever": "~0.10.8",
+    "routes": "~0.2.0",
+    "templar": "~0.2.1"
   },
   "devDependencies": {
     "mocha": "~1.13.0"
