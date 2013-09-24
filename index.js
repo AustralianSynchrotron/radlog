@@ -10,11 +10,12 @@ http.createServer(function(req, res) {
 
   var parsed = url.parse(req.url);
   var route = router.match(parsed.path);
-  if(!route) {
-    res.writeHead(404);
-    return res.end("Not found\n"); 
-  }
+
+  if(!route) return res.error(404);
+
   req.params = route.params;
   route.fn(req, res);
+
 }).listen(config.port);
+
 console.log('Listening on ', config.port);
