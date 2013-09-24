@@ -4,8 +4,8 @@
   "description": "Website for tracking radiation sources.",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/forever/bin/forever -w index.js",
-    "test": "node_modules/mocha/bin/mocha"
+    "start": "node_modules/.bin/forever --minUptime 1000 --spinSleepTime 1000 -w index.js",
+    "test": "node_modules/.bin/mocha"
   },
   "author": "Robbie Clarken",
   "license": "MIT",
