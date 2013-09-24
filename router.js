@@ -4,3 +4,4 @@ var routes = require('routes')
 module.exports = router;
 
 router.addRoute('/', require('./routes/index'));
+router.addRoute('/sources', require('./routes/sources'));
