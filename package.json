@@ -1,0 +1,19 @@
+{
+  "name": "rad",
+  "version": "0.0.0",
+  "description": "Website for tracking radiation sources.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha"
+  },
+  "author": "Robbie Clarken",
+  "license": "MIT",
+  "dependencies": {
+    "leveldown": "~0.8.3",
+    "levelup": "~0.16.0",
+    "jade": "~0.35.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0"
+  }
+}
