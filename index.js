@@ -4,7 +4,10 @@ var config = require('./config')
   , decorate = require('./decorate')
   , http = require('http')
   , url = require('url')
-  , mongoose = require('mongoose');
+  , mongoose = require('mongoose')
+  , RedSess = require('redsess');
+
+RedSess.createClient(config.redis);
 
 var db = mongoose.connect('mongodb://localhost/sources');
 
@@ -23,6 +26,6 @@ http.createServer(function(req, res) {
   req.params = route.params;
   route.fn(req, res);
 
-}).listen(config.port);
+}).listen(config.http.port, config.http.host);
 
-console.log('Listening on ', config.port);
+console.log('Listening on ', config.http.port);

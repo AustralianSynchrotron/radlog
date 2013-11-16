@@ -1,0 +1,15 @@
+extends layout
+
+block head
+  title Login
+
+block body
+  h1 Login
+  form(target='/login', method='POST')
+    label Username:
+      input(name='username')
+    label Password:
+      input(type='password', name='password')
+    input(type='submit')
+  if error
+    div.error= error

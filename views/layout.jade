@@ -1,0 +1,12 @@
+doctype 5
+html(lang="en")
+  head
+    link(rel='stylesheet', href='/css/style.css')
+    block head
+  body
+    aside.login
+      if user
+        p
+          | #{user.username} | 
+          a(href='/logout') Logout
+    block body
