@@ -9,7 +9,16 @@ var ErrorPage = require('error-page')
   , RedSess = require('redsess')
   , url = require('url');
 
+// Load models
+var Source = require('./models/source')
+  , Experiment = require('./models/experiment');
+
 function decorate(req, res, config) {
+  req.models = {
+      Source: Source
+    , Experiment: Experiment
+  };
+
   req.config = config;
   res.error = ErrorPage(req, res);
   res.template = Templar(req, res, templateOptions);

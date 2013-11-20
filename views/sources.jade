@@ -1,0 +1,26 @@
+extends layout
+
+block head
+  title Souces
+
+block body
+    h1 Sources
+    ul
+    for source in sources
+      form(method='POST', action='/sources/'+source.id)
+        div.source
+          div.name-container= source.name
+          div.borrower-container
+            input(name='borrower', value=source.borrower)
+          div.area-container
+            input(name='area', value=source.area)
+          div.borrowed-container
+            input(name='borrowed', value=source.borrowed)
+          div.returned-container
+            input(name='returned', value=source.returned)
+          div.save-container
+            input(type='submit')
+    form(method='POST', action='/sources')
+      label New source name:
+        input(name='name')
+      input(type='submit')

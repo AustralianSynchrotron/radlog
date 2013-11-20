@@ -8,12 +8,7 @@ var config = require('./config')
   , RedSess = require('redsess');
 
 RedSess.createClient(config.redis);
-
-var db = mongoose.connect('mongodb://localhost/sources');
-
-// Load models
-var Source = require('./models/source')
-  , Experiment = require('./models/experiment');
+mongoose.connect('mongodb://localhost/sources');
 
 http.createServer(function(req, res) {
   decorate(req, res, config);
