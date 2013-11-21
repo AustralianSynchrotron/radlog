@@ -48,7 +48,7 @@ function updateSource(id, req, res) {
 
 function showSources(req, res, locals) {
   locals = locals || {};
-  req.models.Source.find({}, function(err, sources) {
+  req.models.Source.find({}).sort('name').exec(function(err, sources) {
     locals.sources = sources;
     res.template('sources.jade', locals);
   });

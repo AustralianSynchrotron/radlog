@@ -1,7 +1,7 @@
 extends layout
 
 block head
-  title Souces
+  title Sources
 
 block body
     h1 Sources
@@ -9,15 +9,20 @@ block body
     for source in sources
       form(method='POST', action='/sources/'+source.id)
         div.source
-          div.name-container= source.name
+          div.name-container
+            strong= source.name
           div.borrower-container
-            input(name='borrower', value=source.borrower)
+            label Borrower
+              input(name='borrower', value=source.borrower)
           div.area-container
-            input(name='area', value=source.area)
+            label Area
+              input(name='area', value=source.area)
           div.borrowed-container
-            input(name='borrowed', value=source.borrowed)
+            label Borrowed
+              input(name='borrowed', value=source.borrowed)
           div.returned-container
-            input(name='returned', value=source.returned)
+            label Returned
+              input(name='returned', value=source.returned)
           div.save-container
             input(type='submit')
     form(method='POST', action='/sources')
