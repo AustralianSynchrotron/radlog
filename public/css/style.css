@@ -1,3 +1,30 @@
+body {
+  font-family: sans-serif;
+  margin: 50px;
+}
+
 .error {
   color: red;
+}
+
+.table {
+  display: table;
+  width:auto;
+  margin: 1em;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.row {
+  display: table-row;
+  width:auto;
+  clear:both;
+}
+
+.col {
+  float: left;
+  display: table-column;
+  width: 10em;
 }

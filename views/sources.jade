@@ -5,27 +5,29 @@ block head
 
 block body
     h1 Sources
-    ul
-    for source in sources
-      form(method='POST', action='/sources/'+source.id)
-        div.source
-          div.name-container
-            strong= source.name
-          div.borrower-container
-            label Borrower
+    div.table
+      div.row.header
+        div.col Source
+        div.col Borrower
+        div.col Area
+        div.col Borrowed
+        div.col Returned
+      for source in sources
+        form(method='POST', action='/sources/'+source.id)
+          div.row
+            div.name-container.col
+              input(name='name', value=source.name)
+            div.borrower-container.col
               input(name='borrower', value=source.borrower)
-          div.area-container
-            label Area
+            div.area-container.col
               input(name='area', value=source.area)
-          div.borrowed-container
-            label Borrowed
+            div.borrowed-container.col
               input(name='borrowed', value=source.borrowed)
-          div.returned-container
-            label Returned
+            div.returned-container.col
               input(name='returned', value=source.returned)
-          div.save-container
-            input(type='submit')
+            div.save-container.col
+              input(type='submit')
     form(method='POST', action='/sources')
-      label New source name:
+      label New source name: 
         input(name='name')
       input(type='submit')

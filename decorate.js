@@ -5,7 +5,7 @@ var ErrorPage = require('error-page')
   , jade = require('jade')
   , path = require('path')
   , templateFolder = path.resolve(__dirname, 'views')
-  , templateOptions = { engine: jade, folder: templateFolder }
+  , templateOptions = { engine: jade, folder: templateFolder, cache: false }
   , RedSess = require('redsess')
   , url = require('url');
 

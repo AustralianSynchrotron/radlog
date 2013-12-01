@@ -40,7 +40,8 @@ function updateSource(id, req, res) {
       if(fields.borrowed) source.borrowed = fields.borrowed;
       if(fields.returned) source.returned = fields.returned;
       source.save(function(err) {
-        showSources(req, res, {error: err ? err.message : null});
+        // TODO: Handle error
+        res.redirect('/sources', 303);
       });
     });
   });
