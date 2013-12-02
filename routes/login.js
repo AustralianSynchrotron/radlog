@@ -33,12 +33,22 @@ function authenticate (req, res) {
         return res.template('login.jade', res.viewData)
       }
 
-      res.session.set('user', {username: fields.username})
-      res.session.get('done', function (er, done) {
-        res.session.del('done')
-        res.redirect(done || '/')
+      req.models.User.findOne({username: fields.username}, function (err, user) {
+        if (user) return loginSuccessful(user, req, res)
+        user = new req.models.User({username: fields.username})
+        user.save(function (err) {
+          loginSuccessful(user, req, res)
+        })
       })
     })
 
+  })
+}
+
+function loginSuccessful (user, req, res) {
+  res.session.set('userId', user.id)
+  res.session.get('done', function (er, done) {
+    res.session.del('done')
+    res.redirect(done || '/')
   })
 }

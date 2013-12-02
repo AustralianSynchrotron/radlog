@@ -39,7 +39,8 @@ block body
               input.table-button(type='submit', value='Check In')
             else
               input.table-button(type='submit', value='Check Out')
-  form(method='POST', action='/sources')
-    label New source name: 
-      input(name='name')
-    input(type='submit')
+  if user.admin
+    form(method='POST', action='/sources')
+      label New source name: 
+        input(name='name')
+      input(type='submit')

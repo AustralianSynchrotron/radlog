@@ -12,11 +12,13 @@ var ErrorPage = require('error-page')
 // Load models
 var Source = require('./models/source')
   , Loan = require('./models/loan')
+  , User = require('./models/user')
 
 function decorate(req, res, config) {
   req.models = {
       Source: Source
     , Loan: Loan
+    , User: User
   }
 
   req.config = config
