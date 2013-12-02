@@ -19,7 +19,11 @@ http.createServer(function(req, res) {
   if(!route) return res.error(404);
 
   req.params = route.params;
-  route.fn(req, res);
+  req.session.get('user', function (err, user) {
+    req.user = user
+    res.viewData.user = user
+    route.fn(req, res)
+  })
 
 }).listen(config.http.port, config.http.host);
 

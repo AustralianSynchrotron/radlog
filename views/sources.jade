@@ -11,22 +11,33 @@ block body
         div.col Borrower
         div.col Area
         div.col Borrowed
-        div.col Returned
       for source in sources
-        form(method='POST', action='/sources/'+source.id)
+        - var loan = source.loan
+        - var operation = 'check-out'
+        if loan.borrowed
+          - operation = 'check-in'
+        form(method='POST', action='/loans/'+loan.id+'/'+operation)
           div.row
-            div.name-container.col
-              input(name='name', value=source.name)
+            div.name-container.col=source.name
             div.borrower-container.col
-              input(name='borrower', value=source.borrower)
+              if loan.borrowed
+                span= loan.borrower
+              else
+                input(name='borrower', value=loan.borrower)
             div.area-container.col
-              input(name='area', value=source.area)
+              if loan.borrowed
+                span= loan.area
+              else
+                input(name='area', value=loan.area)
             div.borrowed-container.col
-              input(name='borrowed', value=source.borrowed)
-            div.returned-container.col
-              input(name='returned', value=source.returned)
+              if loan.borrowed
+                // input(name='borrowed', value=loan.borrowedFormatted)
+                span= loan.borrowedFormatted
             div.save-container.col
-              input(type='submit')
+              if loan.borrowed
+                input(type='submit', value='Check In')
+              else
+                input(type='submit', value='Check Out')
     form(method='POST', action='/sources')
       label New source name: 
         input(name='name')

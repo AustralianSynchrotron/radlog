@@ -27,4 +27,5 @@ body {
   float: left;
   display: table-column;
   width: 10em;
+  height: 1.5em;
 }

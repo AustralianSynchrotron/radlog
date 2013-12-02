@@ -19,9 +19,14 @@
     "ldapjs": "~0.6.3",
     "formidable": "~1.0.14",
     "redsess": "~0.3.2",
-    "st": "~0.2.2"
+    "st": "~0.2.2",
+    "dateformat": "~1.0.6-1.2.3"
   },
   "devDependencies": {
     "mocha": "~1.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AustralianSynchrotron/radlog.git"
   }
 }

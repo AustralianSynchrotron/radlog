@@ -1,12 +1,9 @@
 var mongoose = require('mongoose')
-  , Schema = mongoose.Schema;
+  , Schema = mongoose.Schema
 
 var schema = new Schema({
-  name: String,
-  borrower: String,
-  area: String,
-  borrowed: Date,
-  returned: Date
-});
+    name: String
+  , loan: {type: Schema.Types.ObjectId, ref: 'Loan'}
+})
 
-module.exports = mongoose.model('Source', schema);
+module.exports = mongoose.model('Source', schema)

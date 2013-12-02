@@ -11,17 +11,18 @@ var ErrorPage = require('error-page')
 
 // Load models
 var Source = require('./models/source')
-  , Experiment = require('./models/experiment');
+  , Loan = require('./models/loan')
 
 function decorate(req, res, config) {
   req.models = {
       Source: Source
-    , Experiment: Experiment
+    , Loan: Loan
   };
 
   req.config = config;
   res.error = ErrorPage(req, res);
   res.template = Templar(req, res, templateOptions);
+  res.viewData = {}
 
   req.session = res.session = new RedSess(req, res, {
       keys: config.keys
