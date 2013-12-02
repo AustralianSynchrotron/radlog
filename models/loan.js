@@ -10,13 +10,13 @@ var schema = new Schema({
   , returned: Date
 })
 
-schema.virtual('borrowedFormatted').get(function() {
-  if(!this.borrowed) return '';
+schema.virtual('borrowedFormatted').get(function () {
+  if(!this.borrowed) return ''
   return dateFormat(this.borrowed, 'yyyy-mm-dd HH:MM')
 })
 
-schema.virtual('returnedFormatted').get(function() {
-  if(!this.returned) return '';
+schema.virtual('returnedFormatted').get(function () {
+  if(!this.returned) return ''
   return dateFormat(this.returned, 'yyyy-mm-dd HH:MM')
 })
 

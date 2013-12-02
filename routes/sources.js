@@ -1,8 +1,8 @@
-module.exports = sources;
+module.exports = sources
 
-var formidable = require('formidable');
+var formidable = require('formidable')
 
-function sources(req, res) {
+function sources (req, res) {
   if(!req.user) {
     res.session.set('done', '/sources')
     return res.redirect('/login')
@@ -20,49 +20,48 @@ function sources(req, res) {
   }
 }
 
-function newSource(req, res) {
-  var form = formidable.IncomingForm();
-  form.parse(req, function(err, fields) {
-    var name = fields.name || '';
-    var loan = new req.models.Loan({});
-    var source = new req.models.Source({name: name, loan: loan});
+function newSource (req, res) {
+  formidable.IncomingForm().parse(req, function (err, fields) {
+    var name = fields.name || ''
+    var loan = new req.models.Loan({})
+    var source = new req.models.Source({name: name, loan: loan})
     loan.source = source
-    loan.save(function(err) {
-      source.save(function(err) {
+    loan.save(function (err) {
+      source.save(function (err) {
         if(err) {
           res.viewData.error = err.message
         }
         showSources(req, res)
-      });
-    });
-  });
+      })
+    })
+  })
 }
 
-function updateSource(id, req, res) {
+function updateSource (id, req, res) {
   // TODO: Use find and update
-  req.models.Source.findById(id, function(err, source) {
+  req.models.Source.findById(id, function (err, source) {
     if(err) {
       res.viewData.error = err.message
       return showSources(req, res)
     }
-    var form = formidable.IncomingForm();
-    form.parse(req, function(err, fields) {
-      if(fields.name) source.name = fields.name;
-      source.save(function(err) {
+    var form = formidable.IncomingForm()
+    form.parse(req, function (err, fields) {
+      if(fields.name) source.name = fields.name
+      source.save(function (err) {
         // TODO: Handle error
-        res.redirect('/sources', 303);
-      });
-    });
-  });
+        res.redirect('/sources', 303)
+      })
+    })
+  })
 }
 
-function showSources(req, res) {
-  req.models.Source.find().populate('loan').sort('name').exec(function(err, sources) {
-    res.viewData.sources = sources;
-    res.session.get('error', function(err, value) {
+function showSources (req, res) {
+  req.models.Source.find().populate('loan').sort('name').exec(function (err, sources) {
+    res.viewData.sources = sources
+    res.session.get('error', function (err, value) {
       res.session.del('error')
       res.viewData.error = value
-      res.template('sources.jade', res.viewData);
+      res.template('sources.jade', res.viewData)
     })
-  });
+  })
 }

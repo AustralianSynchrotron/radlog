@@ -30,25 +30,25 @@ function loans (req, res) {
 }
 
 function showLoans (req, res) {
-  req.models.Loan.find({borrowed: {$ne: null}}).populate('source').sort('borrowed').exec(function(err, loans) {
+  req.models.Loan.find({borrowed: {$ne: null}}).populate('source').sort('borrowed').exec(function (err, loans) {
     res.viewData.loans = loans
     res.template('loans.jade', res.viewData)
   })
 }
 
 function checkOut (id, req, res) {
-  req.models.Loan.findById(id, function(err, loan) {
+  req.models.Loan.findById(id, function (err, loan) {
     var form = formidable.IncomingForm()
-    form.parse(req, function(err, fields) {
+    form.parse(req, function (err, fields) {
 
       if (!fields.borrower) {
-        return res.session.set('error', 'Borrower must be supplied.', function() {
+        return res.session.set('error', 'Borrower must be supplied.', function () {
           res.redirect('/sources')
         })
       }
 
       if (!fields.area) {
-        return res.session.set('error', 'Area must be supplied.', function() {
+        return res.session.set('error', 'Area must be supplied.', function () {
           res.redirect('/sources')
         })
       }
@@ -56,7 +56,7 @@ function checkOut (id, req, res) {
       loan.borrower = fields.borrower
       loan.area = fields.area
       loan.borrowed = new Date()
-      loan.save(function(err) {
+      loan.save(function (err) {
         // TODO: Handle error
         res.redirect('/sources', 303)
       })
@@ -65,11 +65,11 @@ function checkOut (id, req, res) {
 }
 
 function checkIn (id, req, res) {
-  req.models.Loan.findById(id, function(err, loan) {
+  req.models.Loan.findById(id, function (err, loan) {
     var form = formidable.IncomingForm()
-    form.parse(req, function(err, fields) {
+    form.parse(req, function (err, fields) {
       loan.returned = new Date()
-      loan.save(function(err) {
+      loan.save(function (err) {
         // TODO: Handle error
         applyNewLoan(loan.source, req, res)
       })
@@ -78,11 +78,11 @@ function checkIn (id, req, res) {
 }
 
 function applyNewLoan(sourceId, req, res) {
-  req.models.Source.findById(sourceId, function(err, source) {
+  req.models.Source.findById(sourceId, function (err, source) {
     var newLoan = new req.models.Loan({source: source})
-    newLoan.save(function(err) {
+    newLoan.save(function (err) {
       source.loan = newLoan
-      source.save(function(err) {
+      source.save(function (err) {
         res.redirect('/sources', 303)
       })
     })

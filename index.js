@@ -9,7 +9,7 @@ var config = require('./config')
 RedSess.createClient(config.redis)
 mongoose.connect(config.db)
 
-http.createServer(function(req, res) {
+http.createServer(function (req, res) {
   decorate(req, res, config)
 
   var parsed = url.parse(req.url)
@@ -26,4 +26,4 @@ http.createServer(function(req, res) {
 
 }).listen(config.http.port, config.http.host)
 
-console.log('Listening on ', config.http.port)
+console.log('Listening on ' + config.http.port)

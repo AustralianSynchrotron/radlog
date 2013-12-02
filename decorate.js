@@ -1,4 +1,4 @@
-module.exports = decorate;
+module.exports = decorate
 
 var ErrorPage = require('error-page')
   , Templar = require('templar')
@@ -7,7 +7,7 @@ var ErrorPage = require('error-page')
   , templateFolder = path.resolve(__dirname, 'views')
   , templateOptions = { engine: jade, folder: templateFolder, cache: false }
   , RedSess = require('redsess')
-  , url = require('url');
+  , url = require('url')
 
 // Load models
 var Source = require('./models/source')
@@ -17,17 +17,17 @@ function decorate(req, res, config) {
   req.models = {
       Source: Source
     , Loan: Loan
-  };
+  }
 
-  req.config = config;
-  res.error = ErrorPage(req, res);
-  res.template = Templar(req, res, templateOptions);
+  req.config = config
+  res.error = ErrorPage(req, res)
+  res.template = Templar(req, res, templateOptions)
   res.viewData = {}
 
   req.session = res.session = new RedSess(req, res, {
       keys: config.keys
     , cookies: req.cookies
-  });
+  })
 
   res.redirect = function (target, code) {
     res.statusCode = code || 302

@@ -1,6 +1,6 @@
-module.exports = logout;
+module.exports = logout
 
 function logout (req, res) {
-  res.session.del('user');
-  res.redirect('/');
+  res.session.del('user')
+  res.redirect('/')
 }
