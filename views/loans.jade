@@ -1,0 +1,21 @@
+extends layout
+
+block head
+  title Loans
+
+block body
+  h1 Loans
+  div.table
+    div.row.header
+      div.col.name-container Source
+      div.col.borrower-container Borrower
+      div.col.area-container Area
+      div.col.borrowed-container Borrowed
+      div.col.returned-container Returned
+    for loan in loans
+      div.row
+        div.col.name-container= loan.source.name
+        div.col.borrower-container= loan.borrower
+        div.col.area-container= loan.area
+        div.col.borrowed-container= loan.borrowedFormatted
+        div.col.returned-container= loan.returnedFormatted

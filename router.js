@@ -12,4 +12,5 @@ router.addRoute('/login', require('./routes/login'));
 router.addRoute('/logout', require('./routes/logout'));
 router.addRoute('/sources', require('./routes/sources'));
 router.addRoute('/sources/:id', require('./routes/sources'));
+router.addRoute('/loans', require('./routes/loans'));
 router.addRoute('/loans/:id/:operation(check-out|check-in)', require('./routes/loans'));

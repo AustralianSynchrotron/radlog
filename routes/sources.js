@@ -39,6 +39,7 @@ function newSource(req, res) {
 }
 
 function updateSource(id, req, res) {
+  // TODO: Use find and update
   req.models.Source.findById(id, function(err, source) {
     if(err) {
       res.viewData.error = err.message
@@ -56,8 +57,12 @@ function updateSource(id, req, res) {
 }
 
 function showSources(req, res) {
-  req.models.Source.find({}).populate('loan').sort('name').exec(function(err, sources) {
+  req.models.Source.find().populate('loan').sort('name').exec(function(err, sources) {
     res.viewData.sources = sources;
-    res.template('sources.jade', res.viewData);
+    res.session.get('error', function(err, value) {
+      res.session.del('error')
+      res.viewData.error = value
+      res.template('sources.jade', res.viewData);
+    })
   });
 }

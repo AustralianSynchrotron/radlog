@@ -3,13 +3,23 @@ body {
   margin: 50px;
 }
 
+
+.clearfix:before, .clearfix:after {
+  content:" ";
+  display:table
+}
+
+.clearfix:after {
+  clear:both
+}
+
 .error {
   color: red;
 }
 
 .table {
   display: table;
-  width:auto;
+  width: auto;
   margin: 1em;
 }
 
@@ -19,13 +29,33 @@ body {
 
 .row {
   display: table-row;
-  width:auto;
-  clear:both;
+  width: auto;
+  clear: both;
 }
 
 .col {
   float: left;
   display: table-column;
-  width: 10em;
+  width: 11em;
   height: 1.5em;
+}
+
+.borrower-container {
+  width: 14em;
+}
+
+.borrower-container > input {
+  width: 15em;
+}
+
+.area-container {
+  width: 14em;
+}
+
+.area-container > input {
+  width: 15em;
+}
+
+.table-button {
+  width: 8em;
 }
