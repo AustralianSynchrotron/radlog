@@ -1,8 +1,6 @@
 body {
   font-family: sans-serif;
-  margin: 50px;
 }
-
 
 .clearfix:before, .clearfix:after {
   content:" ";
@@ -11,6 +9,14 @@ body {
 
 .clearfix:after {
   clear:both
+}
+
+.container {
+  width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .error {
