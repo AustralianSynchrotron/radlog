@@ -2,6 +2,14 @@ body {
   font-family: sans-serif;
 }
 
+#banner {
+  background-image: url("/images/SecondaryLogoWhiteOnGrey.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  text-indent: -20000px;
+  height: 130px;
+}
+
 .clearfix:before, .clearfix:after {
   content:" ";
   display:table
