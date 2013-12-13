@@ -3,18 +3,6 @@ extends layout
 block head
   title Sources
 
-  if user.admin
-    script.
-      $(function() {
-        $('.delete-button').click(function(e) {
-          $.ajax({
-              url: $(this).attr('action')
-            , type: 'DELETE'
-            , success: function() { location.reload() }
-          })
-        })
-      })
-
 block body
   h1 Sources
   if error
