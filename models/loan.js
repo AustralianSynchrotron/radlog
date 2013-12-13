@@ -8,6 +8,9 @@ var schema = new Schema({
   , area: String
   , borrowed: Date
   , returned: Date
+  , checkedOutBy: String
+  , checkedInBy: String
+  , deleted: {type: Boolean, default: false}
 })
 
 schema.virtual('borrowedFormatted').get(function () {

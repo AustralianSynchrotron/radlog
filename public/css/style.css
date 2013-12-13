@@ -51,7 +51,11 @@ body {
   float: left;
   display: table-column;
   width: 11em;
-  height: 1.5em;
+  min-height: 1.5em;
+}
+
+.name-container {
+  width: 9em;
 }
 
 .borrower-container {
@@ -72,4 +76,8 @@ body {
 
 .table-button {
   width: 8em;
+}
+
+.checker {
+  font-size: .8em;
 }

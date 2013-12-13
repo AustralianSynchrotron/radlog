@@ -56,6 +56,7 @@ function checkOut (id, req, res) {
       loan.borrower = fields.borrower
       loan.area = fields.area
       loan.borrowed = new Date()
+      loan.checkedOutBy = req.user.username
       loan.save(function (err) {
         // TODO: Handle error
         res.redirect('/sources', 303)
@@ -69,6 +70,7 @@ function checkIn (id, req, res) {
     var form = formidable.IncomingForm()
     form.parse(req, function (err, fields) {
       loan.returned = new Date()
+      loan.checkedInBy = req.user.username
       loan.save(function (err) {
         // TODO: Handle error
         applyNewLoan(loan.source, req, res)

@@ -13,9 +13,13 @@ block body
       div.col.borrowed-container Borrowed
       div.col.returned-container Returned
     for loan in loans
-      div.row
+      div.row.clearfix
         div.col.name-container= loan.source.name
         div.col.borrower-container= loan.borrower
         div.col.area-container= loan.area
-        div.col.borrowed-container= loan.borrowedFormatted
-        div.col.returned-container= loan.returnedFormatted
+        div.col.borrowed-container
+          div= loan.borrowedFormatted
+          div.checker= loan.checkedOutBy
+        div.col.returned-container
+          div= loan.returnedFormatted
+          div.checker= loan.checkedInBy

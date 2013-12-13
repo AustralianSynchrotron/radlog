@@ -11,10 +11,15 @@ function sources (req, res) {
     case 'GET':
       return showSources(req, res)
     case 'POST':
+      if(!req.user.admin) return res.error(403);
       if(typeof(req.params.id) === 'undefined') {
         return newSource(req, res)
       }
       return updateSource(req.params.id, req, res)
+    case 'DELETE':
+      if(!req.user.admin) return res.error(403);
+      if(typeof(req.params.id) === 'undefined') return res.error(400);
+      return deleteSource(req.params.id, req, res)
     default:
       return res.error(405)
   }
@@ -55,8 +60,19 @@ function updateSource (id, req, res) {
   })
 }
 
+function deleteSource (id, req, res) {
+  // TODO: Use find and update
+  req.models.Source.findByIdAndUpdate(id, {$set: {deleted: true}}, function (err, source) {
+    if(err) {
+      res.viewData.error = err.message
+      return showSources(req, res)
+    }
+    res.redirect('/sources', 303)
+  })
+}
+
 function showSources (req, res) {
-  req.models.Source.find().populate('loan').sort('name').exec(function (err, sources) {
+  req.models.Source.find({deleted: false}).populate('loan').sort('name').exec(function (err, sources) {
     res.viewData.sources = sources
     res.session.get('error', function (err, value) {
       res.session.del('error')

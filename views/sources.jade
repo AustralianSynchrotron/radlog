@@ -3,6 +3,18 @@ extends layout
 block head
   title Sources
 
+  if user.admin
+    script.
+      $(function() {
+        $('.delete-button').click(function(e) {
+          $.ajax({
+              url: $(this).attr('action')
+            , type: 'DELETE'
+            , success: function() { location.reload() }
+          })
+        })
+      })
+
 block body
   h1 Sources
   if error
@@ -39,6 +51,8 @@ block body
               input.table-button(type='submit', value='Check In')
             else
               input.table-button(type='submit', value='Check Out')
+            if user.admin
+              input.delete-button.table-button(type='button', value='Delete', action='/sources/'+source.id)
   if user.admin
     form(method='POST', action='/sources')
       label New source name: 
