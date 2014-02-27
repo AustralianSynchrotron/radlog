@@ -4,22 +4,28 @@ block head
   title Loans
 
 block body
-  h1 Loans
-  div.table
-    div.row.header
-      div.col.name-container Source
-      div.col.borrower-container Borrower
-      div.col.area-container Area
-      div.col.borrowed-container Borrowed
-      div.col.returned-container Returned
-    for loan in loans
-      div.row.clearfix
-        div.col.name-container= loan.source.name
-        div.col.borrower-container= loan.borrower
-        div.col.area-container= loan.area
-        div.col.borrowed-container
-          div= loan.borrowedFormatted
-          div.checker= loan.checkedOutBy
-        div.col.returned-container
-          div= loan.returnedFormatted
-          div.checker= loan.checkedInBy
+  #banner Australian Synchrotron Logo
+  #content
+    h1 Loans
+    div.table
+      div.row.header
+        div.col.name-container Source
+        div.col.loaned_to-container Loaned To
+        div.col.area-container Area
+        div.col.tout-container Time Out
+        div.col.loanby-container Loaned By
+        div.col.tin-container Time In
+        div.col.returnby-container Returned By
+      for loan in loans
+        div.row.clearfix
+          div.col.name-container= loan.source.name
+          div.col.loaned_to-container= loan.borrower
+          div.col.area-container= loan.area
+          div.col.tout-container= loan.borrowedFormatted
+            //div= loan.borrowedFormatted
+            //div.checker= loan.checkedOutBy
+          div.col.loanby-container= loan.checkedOutBy
+          div.col.tin-container= loan.returnedFormatted
+            //div= loan.returnedFormatted
+            //div.checker= loan.checkedInBy
+          div.col.returnby-container= loan.checkedInBy

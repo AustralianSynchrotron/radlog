@@ -2,10 +2,12 @@ extends layout
 
 block head
   title Login
-
+  link(rel='stylesheet', type='text/css', href='/public/css/style.css')
 block body
-  h1 Login
-  form(target='/login', method='POST')
+  #banner
+  #content
+    h1 Login
+  form(action='/login', method='POST')
     label Username:
       input(name='username')
     label Password:

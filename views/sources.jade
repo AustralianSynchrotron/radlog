@@ -10,9 +10,9 @@ block body
   div.table
     div.row.header
       div.col.name-container Source
-      div.col.borrower-container Borrower
+      div.col.borrower-container Loaned By
       div.col.area-container Area
-      div.col.borrowed-container Borrowed
+      div.col.borrowed-container Borrowed On
     for source in sources
       - var loan = source.loan
       - var operation = 'check-out'
