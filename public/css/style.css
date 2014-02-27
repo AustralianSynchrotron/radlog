@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background-color: #4c4c4c;
+  background-color: #4c4c4c;/*0e185e#4c4c4c;*/
 }
 
 #banner {
@@ -41,21 +41,27 @@ body {
   background-color: #c6c3b9;
 }
 
-#newsource form {
-  width: 240px;
+#forms form {
+  width: auto; /*240px;*/
+  position:absolute;
+  right:41%;
   margin: 0 auto;
   border: 0 auto;
   padding: 0 auto;
 }
 
-/*#newsource form label {
+#froms form label {
   float: center;
   width: 310px;
-}*/
+}
 
-#newsource form input [type="submit"] {
+#forms form input [type="submit"] {
   float: center;
   width: auto;
+}
+
+p {
+  margin: 0px;
 }
 
 a:link, a:visited {
@@ -87,10 +93,11 @@ a:hover, a:active {
 
 .login {
   padding: 0;
-  margin: 0;
+  margin: 8px 0;
   height: 1.2 em;
   width: 140px;
-  position: right;
+  position: absolute;
+  right: 16px;
 }
 
 .error {
@@ -155,8 +162,21 @@ a:hover, a:active {
   padding: 12px 0;
 }
 
+.save-container {
+  padding: 12px 0;
+  width: 220px;
+}
+
 .table-button {
   width: 8em;
+  float: left;
+}
+
+.delete-button {
+  width: 8em;
+  float: right;
+  position: relative;
+  right: 4px;
 }
 
 .checker {
