@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background-color: #585858;
+  background-color: #4c4c4c;
 }
 
 #banner {
@@ -35,7 +35,9 @@ body {
   font-size: 1.5em;
   float: right;
   position: relative;
-  left: -43%;
+  left: -45%;
+  padding: 0;
+  margin: 24px auto;
 }
 
 #content li {
@@ -92,13 +94,13 @@ a:hover, a:active {
 .table {
   display: table;
   width: auto;
-  margin: 1em;
-  position: left;
+  margin: 1em auto;
   background-color: #8f8f8f;
-  /*border-style: solid;*/
+  border: 2px solid;
 }
 
 .header {
+  background-color: #585858;
   font-weight: bold;
 }
 
@@ -108,11 +110,17 @@ a:hover, a:active {
   clear: both;
 }
 
+.row:nth-child(even) {
+  background-color: #a8a8a8;
+}
+
 .col {
+  /*border: 1px dotted;*/
   float: left;
   display: table-column;
   width: 11em;
   min-height: 1.5em;
+  text-align: center;
 }
 
 .name-container {
