@@ -48,10 +48,10 @@ body {
   padding: 0 auto;
 }
 
-#newsource form label {
+/*#newsource form label {
   float: center;
   width: 310px;
-}
+}*/
 
 #newsource form input [type="submit"] {
   float: center;
@@ -129,10 +129,12 @@ a:hover, a:active {
 }
 
 .name-container {
+  padding: 12px 0;
   width: 9em;
 }
 
 .borrower-container {
+  padding: 12px 0;
   width: 14em;
 }
 
@@ -141,11 +143,16 @@ a:hover, a:active {
 }
 
 .area-container {
+  padding: 12px 0;
   width: 14em;
 }
 
 .area-container > input {
   width: 15em;
+}
+
+.borrowed-container {
+  padding: 12px 0;
 }
 
 .table-button {

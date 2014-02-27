@@ -9,18 +9,18 @@ block body
     h1 Loans
     div.table
       div.row.header
-        div.col.name-container Source
+        div.col.source-container Source
         div.col.loaned_to-container Loaned To
-        div.col.area-container Area
+        div.col.location-container Area
         div.col.tout-container Time Out
         div.col.loanby-container Loaned By
         div.col.tin-container Time In
         div.col.returnby-container Returned By
       for loan in loans
         div.row.clearfix
-          div.col.name-container= loan.source.name
+          div.col.source-container= loan.source.name
           div.col.loaned_to-container= loan.borrower
-          div.col.area-container= loan.area
+          div.col.location-container= loan.area
           div.col.tout-container= loan.borrowedFormatted
             //div= loan.borrowedFormatted
             //div.checker= loan.checkedOutBy
