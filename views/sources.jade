@@ -43,8 +43,8 @@ block body
                 input.table-button(type='submit', value='Check Out')
               if user.admin
                 input.delete-button.table-button(type='button', value='Delete', action='/sources/'+source.id)
+  #newsource  
     if user.admin
       form(method='POST', action='/sources')
-        label New source name: 
-          input(name='name')
+        input(name='name' placeholder='New Source Name')
         input(type='submit')

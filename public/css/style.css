@@ -13,16 +13,6 @@ body {
   border-style: solid;
 }
 
-/*#banner {
-  background-image:url("/images/SecondaryLogoWhiteOnGrey_140px.png");
-  background-position: right top;
-  background-color: #717072;
-  background-repeat: no-repeat;
-  text-indent: -20000px;
-  height: 140px;
-  border-style: solid;
-}*/
-
 #content h1 {
   font-size: 3.0em;
   color: #111;
@@ -48,7 +38,24 @@ body {
   border-width: 5px;
   width: 105px;
   position: center;
-  background-color: #c6c3b9/*8a8a8a/*c6c3b9#646068*/;
+  background-color: #c6c3b9;
+}
+
+#newsource form {
+  width: 240px;
+  margin: 0 auto;
+  border: 0 auto;
+  padding: 0 auto;
+}
+
+#newsource form label {
+  float: center;
+  width: 310px;
+}
+
+#newsource form input [type="submit"] {
+  float: center;
+  width: auto;
 }
 
 a:link, a:visited {
@@ -72,7 +79,6 @@ a:hover, a:active {
 }
 
 .container {
-  /*width: 1020px;*/
   margin-left: auto;
   margin-right: auto;
   -moz-box-sizing: border-box;
@@ -115,7 +121,6 @@ a:hover, a:active {
 }
 
 .col {
-  /*border: 1px dotted;*/
   float: left;
   display: table-column;
   width: 11em;
