@@ -36,6 +36,10 @@ body {
   margin-top: 24px;
 }
 
+#forms .core {
+  margin-top: 24px;
+}
+
 #content li {
   text-align: center;
   margin-bottom:10px;
@@ -47,17 +51,14 @@ body {
 }
 
 #forms form {
-  width: 240px;/*/
-  position:absolute;
-  right:41%;*/
+  width: 240px;
   margin: 0 auto;
   border: 0 auto;
   padding: 0 auto;
 }
 
-#froms form label {
-  float: center;
-  width: 310px;
+#forms .input_box {
+  margin-right: 5px;
 }
 
 #forms form input [type="submit"] {
@@ -83,6 +84,12 @@ a:hover, a:active {
 .clearfix:before, .clearfix:after {
   content:" ";
   display:table
+}
+
+#forms .front_page {
+  width: 580px;
+  position:absolute;
+  right: 25%;
 }
 
 .clearfix:after {
@@ -133,9 +140,6 @@ a:hover, a:active {
   background-color: #a8a8a8;
 }
 
-.source_row:nth-child(even) {
-  background-color: #a8a8a8;
-}
 .col {
   float: left;
   display: table-column;

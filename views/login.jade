@@ -5,13 +5,11 @@ block head
   link(rel='stylesheet', type='text/css', href='/public/css/style.css')
 block body
   #content
-    h1 Login
-  #forms  
-    form(action='/login', method='POST')
-      label Username:
-        input(name='username')
-      label Password:
-        input(type='password', name='password')
+    h1.core Login
+  #forms
+    form.front_page.core(action='/login', method='POST')
+      input.input_box(name='username' placeholder='Username')
+      input.input_box(type='password', name='password' placeholder='Password')
       input(type='submit')
     if error
       div.error= error

@@ -24,7 +24,7 @@ block body
         - var operation = 'check-out'
         if loan.borrowed
           - operation = 'check-in'
-        form.source_row(method='POST', action='/loans/'+loan.id+'/'+operation)
+        form.row(method='POST', action='/loans/'+loan.id+'/'+operation)
           div.row
             div.name-container.col=source.name
             div.col.borrower-container
