@@ -8,7 +8,7 @@ block body
     h1 Sources
     ul
       li
-        a(href='/index') Index
+        a(href='/') Index
       li
         a(href='/loans') Loans
     if error
@@ -24,7 +24,7 @@ block body
         - var operation = 'check-out'
         if loan.borrowed
           - operation = 'check-in'
-        form(method='POST', action='/loans/'+loan.id+'/'+operation)
+        form.source_row(method='POST', action='/loans/'+loan.id+'/'+operation)
           div.row
             div.name-container.col=source.name
             div.col.borrower-container
