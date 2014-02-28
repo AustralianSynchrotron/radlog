@@ -4,9 +4,13 @@ block head
   title Sources
 
 block body
-  #banner Australian Synchrotron Logo
   #content
     h1 Sources
+    ul
+      li
+        a(href='/index') Index
+      li
+        a(href='/loans') Loans
     if error
       div.error= error
     div.table

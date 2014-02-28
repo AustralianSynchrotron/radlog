@@ -4,9 +4,13 @@ block head
   title Loans
 
 block body
-  #banner Australian Synchrotron Logo
   #content
     h1 Loans
+    ul
+      li 
+        a(href='/index') Index
+      li
+        a(href='/sources') Sources
     div.table
       div.row.header
         div.col.source-container Source
@@ -29,3 +33,8 @@ block body
             //div= loan.returnedFormatted
             //div.checker= loan.checkedInBy
           div.col.returnby-container= loan.checkedInBy
+//    ul
+//      li
+//        a(href='/sources') Sources
+//      li
+//        a(href='/index') Index
