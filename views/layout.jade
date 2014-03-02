@@ -10,7 +10,7 @@ html(lang="en")
       aside.login
         if user
           p
-            | #{user.username} | 
-            a(href='/logout') Logout
-      #banner Australian Synchrotron Logo
+            | #{user.username}
+      #banner
+        .logo Australian Synchrotron Logo
       block body

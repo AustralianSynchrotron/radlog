@@ -13,23 +13,27 @@ body {
   border-style: solid;
 }
 
+#banner .logo {
+  height: 50%;
+  text-indent: -20000px;
+}
+
 #content h1 {
   clear: both;
   margin: 0;
   font-size: 3.0em;
   color: #111;
-  text-shadow: 3px 3px 7px #000000;
   text-align: center;
   padding: 10px;
 }
 
-#content ul {
-  font-size: 1.5em;
-  float: right;
-  position: relative;
-  left: -46%;
+#menu ul {
+  height: 40px;
+  background-color: #c6c3b9;
+  text-align:center;
+  font-size: 2.0em;
   padding: 0;
-  margin: 0 0 12px 0;
+  margin: 0px 0 20px 0;
 }
 
 #content .core {
@@ -40,14 +44,20 @@ body {
   margin-top: 24px;
 }
 
-#content li {
+#menu li {
+  display: inline-block;
   text-align: center;
-  margin-bottom:10px;
+  padding: 0 10px;
+  margin:0 0 10px 10px;
   list-style-type: none;
-  border-style: solid;
-  border-width: 5px;
-  width: 105px;
-  background-color: #c6c3b9;
+}
+
+.active {
+  height: 100%;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -webkit-border-radius: 4px 4px 0px 0px;
+  background-color: #4c4c4c;
 }
 
 #forms form {
@@ -71,13 +81,18 @@ p {
 }
 
 a:link, a:visited {
+  color:black;
   text-decoration: none;
   background-color: transparent;
 }
 
+.active a:link, .active a:visited {
+  color:#c6c3b9;
+}
+
 a:hover, a:active {
   text-decoration: none;
-  color: #6A5ACD;
+  /*color: #6A5ACD;*/
   background-color; transparent;
 }
 
@@ -108,8 +123,11 @@ a:hover, a:active {
   margin: 8px 0;
   height: 1.2em;
   width: 140px;
-  position: absolute;
-  right: 16px;
+  float: left;
+  left: 10px;
+  text-indent: -20000px;
+  /*position: absolute;
+  right: 16px;*/
 }
 
 .error {
@@ -126,7 +144,7 @@ a:hover, a:active {
 }
 
 .header {
-  background-color: #585858;
+  background-color: #707070;/*#585858;*/
   font-weight: bold;
 }
 

@@ -4,13 +4,15 @@ block head
   title Sources
 
 block body
-  #content
-    h1 Sources
+  #menu
     ul
-      li
-        a(href='/') Index
+      li.active
+        a(href='/sources') Sources
       li
         a(href='/loans') Loans
+      li
+        a(href='/logout') Logout
+  #content
     if error
       div.error= error
     div.table

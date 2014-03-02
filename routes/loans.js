@@ -30,7 +30,7 @@ function loans (req, res) {
 }
 
 function showLoans (req, res) {
-  req.models.Loan.find({borrowed: {$ne: null}}).populate('source').sort('borrowed').exec(function (err, loans) {
+  req.models.Loan.find({borrowed: {$ne: null}}).populate('source').sort('-borrowed').exec(function (err, loans) {
     res.viewData.loans = loans
     res.template('loans.jade', res.viewData)
   })
