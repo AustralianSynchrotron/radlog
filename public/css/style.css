@@ -4,17 +4,16 @@ body {
 }
 
 #banner {
-  background-image: url("/images/SecondaryLogoWhiteOnGrey_140px.png");
-  background-position: right top;
+  background-image: url("/images/SecondaryLogoWhiteOnGrey_93px.png");
+  background-position: right;
+  background-position-x: 99%;
   background-color: #717072;
   background-repeat: no-repeat;
   text-indent: -20000px;
-  height: 140px;
-  border-style: solid;
+  height: 110px;
 }
 
 #banner .logo {
-  height: 50%;
   text-indent: -20000px;
 }
 
