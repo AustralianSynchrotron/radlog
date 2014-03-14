@@ -21,6 +21,11 @@ function authenticate (req, res) {
       return res.template('login.jade', res.viewData)
     }
 
+    if(req.config.allowedUsers.indexOf(fields.username) === -1) {
+      res.viewData.error = 'That username has not been granted access.'
+      return res.template('login.jade', res.viewData)
+    }
+
     var client = ldap.createClient({
       url: req.config.ldap.host + ':' + req.config.ldap.port
     })
