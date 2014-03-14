@@ -38,6 +38,13 @@ function showLoans (req, res) {
 
 function checkOut (id, req, res) {
   req.models.Loan.findById(id, function (err, loan) {
+
+    if(loan.borrowed) {
+      return res.session.set('error', 'Source is already on loan.', function () {
+        res.redirect('/sources')
+      });
+    }
+
     var form = formidable.IncomingForm()
     form.parse(req, function (err, fields) {
 
