@@ -28,6 +28,23 @@ body {
   box-sizing: border-box;
 }
 
+.clearfix:before, .clearfix:after {
+  content:" ";
+  display:table
+}
+
+.clearfix:after {
+  clear:both
+}
+
+.error {
+  color: yellow;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.4em;
+  font-style: italic;
+}
+
 .login {
   padding: 0;
   margin: 8px 0;
@@ -145,7 +162,6 @@ p {
 
 #forms .front_page {
   width: 425px;
-  position:absolute;
   right: 35%;
 }
 
@@ -215,19 +231,6 @@ p {
 #forms form input [type="submit"] {
   float: center;
   width: auto;
-}
-
-.clearfix:before, .clearfix:after {
-  content:" ";
-  display:table
-}
-
-.clearfix:after {
-  clear:both
-}
-
-.error {
-  color: red;
 }
 
 .checker {

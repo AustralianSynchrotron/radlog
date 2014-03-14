@@ -6,9 +6,9 @@ block body
   #content
     h1.core Login
   #forms
+    if error
+      div.error= error
     form.front_page.core(action='/login', method='POST')
       input.input_box(name='username' placeholder='Username')
       input.input_box(type='password', name='password' placeholder='Password')
-      input(type='submit')
-    if error
-      div.error= error
+      input.clearfix(type='submit')
