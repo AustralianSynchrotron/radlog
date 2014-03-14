@@ -2,6 +2,19 @@ extends layout
 
 block head
   title Sources
+  script.
+    $(function() {
+      $('.delete-button').click(function(e) {
+        var doDelete = confirm('Delete "'+$(this).attr('data-name')+'" from the list of sources?');
+        if(doDelete) {
+          $.ajax({
+              url: $(this).attr('action')
+            , type: 'DELETE'
+            , success: function() { location.reload() }
+          })
+        }
+      })
+    })
 
 block body
   #menu
@@ -26,7 +39,7 @@ block body
         - var operation = 'check-out'
         if loan.borrowed
           - operation = 'check-in'
-        form.row(method='POST', action='/loans/'+loan.id+'/'+operation)
+        form.row.source-form(method='POST', action='/loans/'+loan.id+'/'+operation)
           div.row
             div.name-container.col=source.name
             div.col.borrower-container
@@ -48,7 +61,7 @@ block body
               else
                 input.table-button(type='submit', value='Check Out')
               if user.admin
-                input.delete-button.table-button(type='button', value='Delete', action='/sources/'+source.id)
+                input.delete-button.table-button(type='button', value='Delete', action='/sources/'+source.id, data-name='#{source.name}')
   #forms  
     if user.admin
       form(method='POST', action='/sources')
