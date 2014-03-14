@@ -1,3 +1,6 @@
+/*---------------------*/
+/*Ganeral*/
+/*---------------------*/
 body {
   font-family: sans-serif;
   background-color: #4c4c4c;
@@ -17,14 +20,25 @@ body {
   text-indent: -20000px;
 }
 
-#content h1 {
-  clear: both;
-  margin: 0;
-  font-size: 3.0em;
-  color: #111;
-  text-align: center;
-  padding: 10px;
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+.login {
+  padding: 0;
+  margin: 8px 0;
+  height: 1.2em;
+  width: 140px;
+  float: left;
+  left: 10px;
+  text-indent: -20000px;
+}
+/*---------------------*/
+/* nav bar */
+/*---------------------*/
 
 #menu ul {
   height: 40px;
@@ -35,25 +49,6 @@ body {
   margin: 0px 0 20px 0;
 }
 
-/*---------------------*/
-/* login forms*/
-/*---------------------*/
-#content .core {
-  margin-top: 24px;
-}
-
-#forms .core {
-  margin-top: 24px;
-}
-
-#menu li {
-  display: inline-block;
-  text-align: center;
-  padding: 0 10px;
-  margin:0 0 10px 10px;
-  list-style-type: none;
-}
-
 .active {
   height: 100%;
   -moz-border-radius-topleft: 3px;
@@ -62,24 +57,12 @@ body {
   background-color: #4c4c4c;
 }
 
-#forms form {
-  width: 240px;
-  margin: 0 auto;
-  border: 0;
-  padding: 0;
-}
-
-#forms .input_box {
-  margin-right: 5px;
-}
-
-#forms form input [type="submit"] {
-  float: center;
-  width: auto;
-}
-
-p {
-  margin: 0px;
+#menu li {
+  display: inline-block;
+  text-align: center;
+  padding: 0 10px;
+  margin:0 0 10px 10px;
+  list-style-type: none;
 }
 
 a:link, a:visited {
@@ -97,9 +80,29 @@ a:hover, a:active {
   background-color; transparent;
 }
 
-.clearfix:before, .clearfix:after {
-  content:" ";
-  display:table
+/*---------------------*/
+/* login page */
+/*---------------------*/
+
+#content .core {
+  margin-top: 24px;
+}
+
+#forms .core {
+  margin-top: 24px;
+}
+
+#content h1 {
+  clear: both;
+  margin: 0;
+  font-size: 3.0em;
+  color: #111;
+  text-align: center;
+  padding: 10px;
+}
+
+p {
+  margin: 0px;
 }
 
 #forms .front_page {
@@ -108,30 +111,9 @@ a:hover, a:active {
   right: 35%;
 }
 
-.clearfix:after {
-  clear:both
-}
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.login {
-  padding: 0;
-  margin: 8px 0;
-  height: 1.2em;
-  width: 140px;
-  float: left;
-  left: 10px;
-  text-indent: -20000px;
-}
-
-.error {
-  color: red;
-}
+/*---------------------*/
+/* table layout */
+/*---------------------*/
 
 .table {
   clear:both;
@@ -164,6 +146,10 @@ a:hover, a:active {
   min-height: 1.5em;
   text-align: center;
 }
+
+/*---------------------*/
+/* sources forms*/
+/*---------------------*/
 
 .name-container {
   padding: 12px 0;
@@ -207,6 +193,39 @@ a:hover, a:active {
   float: right;
   position: relative;
   right: 4px;
+}
+
+/*---------------------*/
+/* loans page */
+/*---------------------*/
+
+#forms form {
+  width: 240px;
+  margin: 0 auto;
+  border: 0;
+  padding: 0;
+}
+
+#forms .input_box {
+  margin-right: 5px;
+}
+
+#forms form input [type="submit"] {
+  float: center;
+  width: auto;
+}
+
+.clearfix:before, .clearfix:after {
+  content:" ";
+  display:table
+}
+
+.clearfix:after {
+  clear:both
+}
+
+.error {
+  color: red;
 }
 
 .checker {
