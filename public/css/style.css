@@ -1,6 +1,7 @@
 /*---------------------*/
 /*Ganeral*/
 /*---------------------*/
+
 body {
   font-family: sans-serif;
   background-color: #4c4c4c;
@@ -36,6 +37,7 @@ body {
   left: 10px;
   text-indent: -20000px;
 }
+
 /*---------------------*/
 /* nav bar */
 /*---------------------*/
@@ -81,37 +83,6 @@ a:hover, a:active {
 }
 
 /*---------------------*/
-/* login page */
-/*---------------------*/
-
-#content .core {
-  margin-top: 24px;
-}
-
-#forms .core {
-  margin-top: 24px;
-}
-
-#content h1 {
-  clear: both;
-  margin: 0;
-  font-size: 3.0em;
-  color: #111;
-  text-align: center;
-  padding: 10px;
-}
-
-p {
-  margin: 0px;
-}
-
-#forms .front_page {
-  width: 425px;
-  position:absolute;
-  right: 35%;
-}
-
-/*---------------------*/
 /* table layout */
 /*---------------------*/
 
@@ -145,6 +116,37 @@ p {
   width: 11em;
   min-height: 1.5em;
   text-align: center;
+}
+
+/*---------------------*/
+/* login page */
+/*---------------------*/
+
+#content .core {
+  margin-top: 24px;
+}
+
+#forms .core {
+  margin-top: 24px;
+}
+
+#content h1 {
+  clear: both;
+  margin: 0;
+  font-size: 3.0em;
+  color: #111;
+  text-align: center;
+  padding: 10px;
+}
+
+p {
+  margin: 0px;
+}
+
+#forms .front_page {
+  width: 425px;
+  position:absolute;
+  right: 35%;
 }
 
 /*---------------------*/
