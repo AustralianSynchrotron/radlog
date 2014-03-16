@@ -96,7 +96,7 @@ a:link, a:visited {
 
 a:hover, a:active {
   text-decoration: none;
-  background-color; transparent;
+  background-color: transparent;
 }
 
 /*---------------------*/
@@ -135,18 +135,6 @@ a:hover, a:active {
   text-align: center;
 }
 
-/*---------------------*/
-/* login page */
-/*---------------------*/
-
-#content .core {
-  margin-top: 24px;
-}
-
-#forms .core {
-  margin-top: 24px;
-}
-
 #content h1 {
   clear: both;
   margin: 0;
@@ -156,13 +144,25 @@ a:hover, a:active {
   padding: 10px;
 }
 
+/*---------------------*/
+/* login page */
+/*---------------------*/
+
+h1.login-page {
+  margin-top: 24px;
+}
+
+#login-form .input_box {
+  margin-right: 5px;
+}
+
 p {
   margin: 0px;
 }
 
-#forms .front_page {
-  width: 425px;
-  right: 35%;
+#login-form {
+  margin-top: 24px;
+  text-align: center;
 }
 
 /*---------------------*/
@@ -180,7 +180,7 @@ p {
 }
 
 .borrower-container > input {
-  width: 15em;
+  width: 95%;
 }
 
 .area-container {
@@ -189,7 +189,7 @@ p {
 }
 
 .area-container > input {
-  width: 15em;
+  width: 95%;
 }
 
 .borrowed-container {
@@ -202,35 +202,27 @@ p {
 }
 
 .table-button {
-  width: 8em;
-  float: left;
+  width: 45%;
 }
 
 .delete-button {
-  width: 8em;
-  float: right;
-  position: relative;
-  right: 4px;
+  margin-left:5%;
+}
+
+#new-source-form .submit {
+  width: auto;
+  margin-left:7px;
 }
 
 /*---------------------*/
 /* loans page */
 /*---------------------*/
 
-#forms form {
-  width: 240px;
+#new-source-form {
   margin: 0 auto;
   border: 0;
   padding: 0;
-}
-
-#forms .input_box {
-  margin-right: 5px;
-}
-
-#forms form input [type="submit"] {
-  float: center;
-  width: auto;
+  text-align:center;
 }
 
 .checker {

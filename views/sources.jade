@@ -62,8 +62,7 @@ block body
                 input.table-button(type='submit', value='Check Out')
               if user.admin
                 input.delete-button.table-button(type='button', value='Delete', action='/sources/'+source.id, data-name='#{source.name}')
-  #forms  
-    if user.admin
-      form(method='POST', action='/sources')
-        input(name='name' placeholder='New Source Name')
-        input(type='submit')
+  if user.admin
+    form#new-source-form(method='POST', action='/sources')
+      input(name='name' placeholder='New Source Name')
+      input.submit(type='submit',value='Add Source')

@@ -4,11 +4,10 @@ block head
   title Login
 block body
   #content
-    h1.core Login
-  #forms
+    h1.login-page Login
     if error
       div.error= error
-    form.front_page.core(action='/login', method='POST')
+    form#login-form(action='/login', method='POST')
       input.input_box(name='username' placeholder='Username')
       input.input_box(type='password', name='password' placeholder='Password')
-      input.clearfix(type='submit')
+      input.clearfix(type='submit',value='Login' )
